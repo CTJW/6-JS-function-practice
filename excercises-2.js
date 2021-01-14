@@ -6,9 +6,8 @@
 
 function max (a, b) {
     if (a > b) {
-     return true
-    } else if (b > a)
-        return false
+     return a
+    }
  }
     
 console.assert(max(2,3) === 3)
@@ -20,14 +19,16 @@ console.assert(max(-23, 12) === 12)
 // numbers as arguments and returns the largest of them.
 // ---------------------
 
-function maxOfThree (X, Y, Z) {
-    if (x > y) {
-    return true
-     } if (x > z) {
-        return true
-     } else return false
-}
-
+function maxOfThree(x, y, z) {
+    if (x > y && x > z) {
+        return x
+     } 
+    
+    if (x < y && y > z) {
+        return y
+     } 
+     return z
+    }
 
 console.assert(maxOfThree(2,56,3) === 56)
 console.assert(maxOfThree(12,3,4) === 12)
@@ -39,12 +40,15 @@ console.assert(maxOfThree(-12,4,-5) === 4)
 // vowel, false otherwise.
 // ---------------------
 
-function isVowel (pencil) {
-if (pencil.length == 1) {
-    var vowels = allVows("a", "e", "i", "o", "u")
-    var isVowel = false;
-}
-}
+ function isVowel (pencil) {
+     if (pencil.length == 1) {
+     var vowels = allVows("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+     var isVowel = false;
+     }
+       return true
+ }
+
+
 
 console.assert(isVowel(0) === false);
 console.assert(isVowel("B") === false);
@@ -68,7 +72,7 @@ console.assert(rovarspraket("a") === "a")
 console.assert(rovarspraket("b") === "bob")
 console.assert(rovarspraket("cat") === "cocatot")
 console.assert(rovarspraket("javascript") === "jojavovasoscocroripoptot")
-console.assert(rovarspraket(0) === "0")
+// console.assert(rovarspraket(0) === "0")
 
 
 // ---------------------
@@ -78,15 +82,11 @@ console.assert(rovarspraket(0) === "0")
 // ---------------------
 
 function reverse(str) {
-let reverse = " "
+ var reverse = " "
 for (var i = str.length - 1; i >= 0; i--) {
-    reverse = reverse + str[1]
+    reverse = reverse + str[i]
+    }
 }
-
-return reverse
-
-}
-
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")

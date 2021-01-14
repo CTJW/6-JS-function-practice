@@ -110,8 +110,8 @@ console.assert(greet("Iron Man") === "Hello, Iron Man!")
 // words: "quick", "fox", "fence"
 // sentence: "quick brown fox jumps over the fence"
 
-function madlib (str1,str2,str3,str4) {
-    return ("The, " + str1 + "brown " + str2 + str3 + "over " + "the " + str4 + ".")
+function madlib(str1, str2, str3, str4) {
+    return (`The ${str1} brown ${str2} ${str3} over the ${str4}.`)
 } 
 
 console.assert(madlib("quick","fox","jumps","fence")=== "The quick brown fox jumps over the fence.")
